@@ -45,6 +45,10 @@ python src/audit_dataset.py --use-synthetic
 
 # Keep public-data and synthetic verification reports separate
 python src/audit_dataset.py --use-synthetic --output-prefix synthetic_audit
+
+# Optional PyTorch bridge
+pip install -r requirements-optional.txt
+python src/torch_dataset.py --use-synthetic
 ```
 
 Default output: `reports/audit_summary.md` and `reports/audit_summary.csv`.
@@ -104,7 +108,7 @@ A sample synthetic audit output is included in `examples/synthetic_audit.md`. Ge
 
 ## Pipeline Connection
 
-`src/torch_dataset.py` connects audited episodes to a PyTorch DataLoader. Filter to `pass`-status rows from the audit CSV before training - exclude episodes flagged for data integrity issues.
+`src/torch_dataset.py` connects audited episodes to a PyTorch DataLoader. It is optional and requires `requirements-optional.txt`. Filter to `pass`-status rows from the audit CSV before training - exclude episodes flagged for data integrity issues.
 
 ## What This Does Not Claim
 

@@ -49,7 +49,7 @@ def main() -> None:
     if torch is None:
         raise SystemExit(
             "PyTorch is required for src/torch_dataset.py. "
-            "Install project dependencies with: pip install -r requirements.txt"
+            "Install optional dependencies with: pip install -r requirements-optional.txt"
         )
 
     args = parse_args()
